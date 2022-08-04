@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+             body{
+                padding : 0px 20px 0px 20px;
+            }
+
+            h1 {
+                font-size : 40px;
+            }
+
+            .ipchange{                         
+                height : 60px;
+                width : 400px;
+                background-color: black;          
+                color : white;
+                margin-top : 20px;
+                font-size : 30px;
+            }                                               
+
+            .outerbox{
+                background-color : black;
+                height : 550px;
+                width : 620px;
+                margin : 0px 0px 0px 360px;
+            }
+
+            .innerbox{
+                padding : 20px 20px 20px 20px;
+                background-color : grey;
+                height : 470px;
+                width : 540px;
+                margin : 0px 0px 0px 0px;
+            }
+
+            .bg{
+                height : 800px;
+                background-color : rgb(219, 114, 38);
+            }
+
+            .rows{
+                width : 500px;
+                height : 60px;   
+                float : left;
+                margin-left : 40px;
+
+            }
+
+            button{
+                background-color : rgb(78, 77, 77);
+                height : 40px;
+                width : 70px;
+                color : white;
+            }
+            
+            .clrbtn{
+                height : 40px;
+                width : 220px;
+                margin-right : 240px;
+            }
+        </style>
+    </head>
+    <body>
+       
+        <h1 align = "center">CALCULATOR</h1>
+        <div class ="bg">
+            <br><br><br><br><br>  <!--spacing betwwen outerbox and bg-->
+        <div class="outerbox" align = "center">
+            <br>
+            <div class="innerbox" >
+                <p id ='ch'></p>
+                <input type = "text" id = "num1" placholder = "0" class="ipchange" >
+                <br><br><br>                         <!--Gap between input box and buttons-->
+                <table class = "rows">
+                    <tr>
+                    <td><button type = "button" onclick ="msg('1')">1</button></td>
+                    <td><button type = "button" onclick = "msg('2')">2</button></td>
+                    <td><button type = "button" onclick = "msg('3')">3</button></td>
+                    <td><button type = "button" onclick = "msg('+')">+</button></td>
+                    </tr>
+                </table>
+                    <br><br><br><br><br>
+                    <table class = "rows">
+                    <td> <button type = "button" onclick = "msg('4')">4</button></td>                                    
+                    <td> <button type = "button" onclick = "msg('5')">5</button></td>
+                    <td> <button type = "button" onclick = "msg('6')">6</button></td>
+                    <td><button type = "button" onclick = "msg('-')">-</button></td>
+                    </table>
+                    <br><br><br><br><br>
+                    <table class = "rows">
+                        <tr>
+                        <td><button type = "button" onclick = "msg('7')">7</button></td>
+                        <td><button type = "button" onclick = "msg('8')">8</button></td>
+                        <td><button type = "button" onclick = "msg('9')">9</button></td>
+                        <td><button type = "button" onclick = "msg('0')">0</button></td>
+                        </tr>
+                    </table>
+                    <br><br><br><br><br><br>
+                    <table>
+                        <tr>
+                            <td><button type = "button" class = "clrbtn" onclick = "clr()">Clr</button></td>
+                        </tr>
+                    </table>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        </div>
+        <script>
+           function msg(num){
+                document.getElementById("num1").value = num;
+            }
+            function clr(){
+                document.getElementById("num1").value = '';
+            }
+        </script>
+    </body>
+</html>
