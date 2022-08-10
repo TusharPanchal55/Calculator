@@ -24,6 +24,7 @@
                 height : 550px;
                 width : 620px;
                 margin : 0px 0px 0px 360px;
+                box-shadow: 2px 5px 50px 15px black;
             }
 
             .innerbox{
@@ -54,11 +55,19 @@
                 color : white;
             }
             
+            button:hover{
+                box-shadow : 2px 5px 15px 5px white;
+            }
             .clrbtn{
                 height : 40px;
                 width : 220px;
-                margin-right : 240px;
+                
             }
+            .res{
+                background-color: blanchedalmond;
+                width : 10px;
+            }
+
         </style>
     </head>
     <body>
@@ -70,7 +79,7 @@
             <br>
             <div class="innerbox" >
                 <p id ='ch'></p>
-                <input type = "text" id = "num1" placholder = "0" class="ipchange" >
+                <input type = "text" id = "num1" placeholder = "00" class="ipchange" >
                 <br><br><br>                         <!--Gap between input box and buttons-->
                 <table class = "rows">
                     <tr>
@@ -97,9 +106,11 @@
                         </tr>
                     </table>
                     <br><br><br><br><br><br>
-                    <table>
+                    <table class="rows">
                         <tr>
                             <td><button type = "button" class = "clrbtn" onclick = "clr()">Clr</button></td>
+                            <td><button type = "button" class = "result" onclick = "msg('*')">*</button></td>
+                            <td><button type = "button" class = "result" onclick = "calc()">=</button></td>
                         </tr>
                     </table>
                     </div>
@@ -109,11 +120,17 @@
         </div>
         <script>
            function msg(num){
-                document.getElementById("num1").value = num;
+                document.getElementById("num1").value += num;
             }
             function clr(){
                 document.getElementById("num1").value = '';
             }
+            function calc(){
+                let x = document.getElementById("num1").value;
+                let y = eval(x);
+                document.getElementById("num1").value = y;
+                return y;
+            }     
         </script>
     </body>
 </html>
